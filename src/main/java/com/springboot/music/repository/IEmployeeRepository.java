@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.springboot.music.model.Employee;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long>{
-
+public interface IEmployeeRepository extends JpaRepository<Employee, Long>{
+	
 }

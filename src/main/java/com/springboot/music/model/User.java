@@ -27,6 +27,7 @@ public class User {
 	private String address;
 	private String phone;
 	private String avatar;
+	private String email;
 	
 	public User() {
 		
@@ -37,6 +38,7 @@ public class User {
 	}
 	
 	@Id
+	@Column(name="id_user")
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
@@ -61,7 +63,7 @@ public class User {
 		this.dateofbirth = dateofbirth;
 	}
 	
-	@Column(name="username", length=255, nullable=false)
+	@Column(name="username", length=255, nullable=false, unique = true)
 	public String getUsername() {
 		return username;
 	}
@@ -119,7 +121,7 @@ public class User {
 		this.address = address;
 	}
 	
-	@Column(name="phone", length=100)
+	@Column(name="phone", length=100, unique=true)
 	public String getPhone() {
 		return phone;
 	}
@@ -133,5 +135,13 @@ public class User {
 	}
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
+	}
+	
+	@Column(name="email", length=255, unique=true)
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

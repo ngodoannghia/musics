@@ -13,5 +13,27 @@ public class Album {
 	private long id;
 	private String name;
 	
+	public Album() {
+		
+	}
+	public Album(String name) {
+		this.name = name;
+	}
+	@Id
+	@Column(name="id_album")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
 	
+    @Column(name="name")
+    public String getName() {
+    	return name;
+    }
+    public void setName(String name) {
+    	this.name = name;
+    }
 }

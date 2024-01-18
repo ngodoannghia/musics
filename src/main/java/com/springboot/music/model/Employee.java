@@ -21,6 +21,7 @@ public class Employee {
     }
  
     @Id
+    @Column(name="id_employee")
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;

@@ -28,6 +28,7 @@ public class Category {
 	}
 	
     @Id
+    @Column(name="id_category")
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;

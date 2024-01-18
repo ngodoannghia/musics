@@ -30,6 +30,7 @@ public class Singer {
 	}
 	
 	@Id
+	@Column(name="id_singer")
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;

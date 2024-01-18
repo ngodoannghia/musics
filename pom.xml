@@ -47,6 +47,11 @@
 		    <artifactId>validation-api</artifactId>
 		    <version>1.0.0.GA</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
