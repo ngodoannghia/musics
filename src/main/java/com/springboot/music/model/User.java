@@ -2,15 +2,10 @@ package com.springboot.music.model;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
@@ -20,8 +15,8 @@ public class User {
 	private Date dateofbirth;
 	private String username;
 	private String password;
-	private String role;
-	private String pack;
+	private Set<Role> roles = new HashSet<>();
+	private EPack pack;
 	private Date create_at;
 	private Date update_at;
 	private String address;
@@ -36,7 +31,11 @@ public class User {
 		this.username = username;
 		this.password = password;
 	}
-	
+	public User(String username, String email, String password) {
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
 	@Id
 	@Column(name="id_user")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -79,19 +78,24 @@ public class User {
 		this.password = password;
 	}
 	
-	@Column(name="role", length=100)
-	public String getRole() {
-		return role;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "user_roles", 
+               joinColumns = @JoinColumn(name = "id_user"),
+               inverseJoinColumns = @JoinColumn(name = "id_role"))
+	@Column(name="roles", length=100)
+	public Set<Role> getRoles() {
+	    return roles;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoles(Set<Role> roles) {
+	    this.roles = roles;
 	}
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name="pack", length=100)
-	public String getPack() {
+	public EPack getPack() {
 		return pack;
 	}
-	public void setPack(String pack) {
+	public void setPack(EPack pack) {
 		this.pack = pack;
 	}
 	
