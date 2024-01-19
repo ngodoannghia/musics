@@ -33,7 +33,7 @@ public class Role {
   	}
   	
   	@Enumerated(EnumType.STRING)
-  	@Column(name="role", length=50, nullable=false, unique = true)
+  	@Column(name="name", length=50, nullable=false, unique = true)
   	public ERole getName() {
   		return name;
   	}

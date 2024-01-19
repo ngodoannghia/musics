@@ -90,8 +90,10 @@ public class AuthController {
 		User user = new User(signUpRequest.getUsername(),
 				signUpRequest.getEmail(),
 				encoder.encode(signUpRequest.getPassword()));
+		
 
 		Set<String> strRoles = signUpRequest.getRole();
+		System.out.println("Vao day" + strRoles);
 		Set<Role> roles = new HashSet<>();
 
 	    if (strRoles == null) {
@@ -120,7 +122,7 @@ public class AuthController {
 	    		}
 	    	});
 	    }
-
+	    
 	    user.setRoles(roles);
 	    userRepository.save(user);
 

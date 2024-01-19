@@ -22,7 +22,7 @@ import com.springboot.music.security.services.UserDetailsServiceImpl;
 @EnableMethodSecurity
 public class WebSecurityConfig {
 	@Autowired
-	UserDetailsServiceImpl _userDetailsService;
+	UserDetailsServiceImpl userDetailsService;
 	
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
@@ -35,7 +35,7 @@ public class WebSecurityConfig {
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
          
-        authProvider.setUserDetailsService(_userDetailsService);
+        authProvider.setUserDetailsService(userDetailsService);
         authProvider.setPasswordEncoder(passwordEncoder());
      
         return authProvider;
