@@ -1,4 +1,4 @@
-package com.springboot.music.security.jwt;
+package com.springboot.music.common;
 
 import java.security.Key;
 import java.util.Date;
@@ -13,7 +13,7 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
-import com.springboot.music.security.services.UserDetailsImpl;
+import com.springboot.music.service.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

@@ -22,17 +22,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.music.common.JwtUtils;
+import com.springboot.music.common.MessageResponse;
+import com.springboot.music.common.UserInfoResponse;
+import com.springboot.music.dto.LoginDTO;
+import com.springboot.music.dto.SignupDTO;
 import com.springboot.music.model.ERole;
 import com.springboot.music.model.Role;
 import com.springboot.music.model.User;
-import com.springboot.music.payload.request.LoginRequest;
-import com.springboot.music.payload.request.SignupRequest;
-import com.springboot.music.payload.response.MessageResponse;
-import com.springboot.music.payload.response.UserInfoResponse;
 import com.springboot.music.repository.IRoleRepository;
 import com.springboot.music.repository.IUserRepository;
-import com.springboot.music.security.jwt.JwtUtils;
-import com.springboot.music.security.services.UserDetailsImpl;
+import com.springboot.music.service.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -54,7 +54,7 @@ public class AuthController {
 	JwtUtils jwtUtils;
 
 	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginDTO loginRequest) {
 
 		Authentication authentication = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -77,7 +77,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupDTO signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
 	    }

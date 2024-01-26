@@ -1,4 +1,4 @@
-package com.springboot.music.payload.response;
+package com.springboot.music.common;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class UserInfoResponse {
 	private String email;
 	private List<String> roles;
 
-	public UserInfoResponse(Long id, String username, String email, List<String> roles) {
+	public UserInfoResponse(Long id, String username, String email, List<String> roles) {  
 		this.id = id;
 		this.username = username;
 		this.email = email;

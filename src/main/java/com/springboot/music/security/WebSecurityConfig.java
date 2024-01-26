@@ -14,9 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.springboot.music.security.jwt.AuthEntryPointJwt;
-import com.springboot.music.security.jwt.AuthTokenFilter;
-import com.springboot.music.security.services.UserDetailsServiceImpl;
+import com.springboot.music.common.AuthEntryPointJwt;
+import com.springboot.music.common.AuthTokenFilter;
+import com.springboot.music.service.UserDetailsServiceImpl;
+
 
 @Configuration
 @EnableMethodSecurity

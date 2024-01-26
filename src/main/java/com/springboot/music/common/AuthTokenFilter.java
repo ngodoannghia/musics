@@ -1,4 +1,4 @@
-package com.springboot.music.security.jwt;
+package com.springboot.music.common;
 
 import java.io.IOException;
 
@@ -16,7 +16,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.springboot.music.security.services.UserDetailsServiceImpl;
+import com.springboot.music.service.UserDetailsServiceImpl;
+
 
 public class AuthTokenFilter extends OncePerRequestFilter {
 	@Autowired

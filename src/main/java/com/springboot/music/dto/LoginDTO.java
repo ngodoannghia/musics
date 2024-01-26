@@ -1,6 +1,7 @@
-package com.springboot.music.payload.request;
+package com.springboot.music.dto;
 
-public class LoginRequest {
+public class LoginDTO {
+	
 	private String username;
 	private String password;
 	
@@ -16,4 +17,6 @@ public class LoginRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+
 }

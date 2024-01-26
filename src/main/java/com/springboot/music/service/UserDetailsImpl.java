@@ -1,4 +1,4 @@
-package com.springboot.music.security.services;
+package com.springboot.music.service;
 
 import java.util.Collection;
 import java.util.List;

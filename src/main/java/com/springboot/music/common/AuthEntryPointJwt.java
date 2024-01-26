@@ -1,4 +1,4 @@
-package com.springboot.music.security.jwt;
+package com.springboot.music.common;
 
 import java.io.IOException;
 import java.util.HashMap;

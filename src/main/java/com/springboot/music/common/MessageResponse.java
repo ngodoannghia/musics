@@ -1,4 +1,4 @@
-package com.springboot.music.payload.response;
+package com.springboot.music.common;
 
 public class MessageResponse {
 	private String message;
