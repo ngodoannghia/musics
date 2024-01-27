@@ -1,4 +1,4 @@
-package com.springboot.music.security;
+package com.springboot.music.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -35,5 +35,9 @@ public class AWSClientConfig {
                 .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
                 .withRegion(region)
                 .build();
+    }
+    
+    public String getBucketName() {
+    	return this.bucketName;
     }
 }

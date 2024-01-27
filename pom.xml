@@ -83,11 +83,10 @@
 		    <groupId>jakarta.validation</groupId>
 		    <artifactId>jakarta.validation-api</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
 		<dependency>
 		    <groupId>com.amazonaws</groupId>
 		    <artifactId>aws-java-sdk</artifactId>
-		    <version>1.12.641</version>
+		    <version>1.12.644</version>
 		</dependency>
 	</dependencies>
 
